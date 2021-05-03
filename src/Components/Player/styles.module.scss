@@ -1,0 +1,145 @@
+.playerContainer {
+  height: 100vh;
+  width: 30rem;
+
+  background: var(--purple-500);
+  color: var(--white);
+
+  padding: 3rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  strong {
+    font-family: Lexend, sans-serif;
+    font-weight: 600;
+  }
+
+  footer{
+    align-self: stretch;
+
+    &.empty .progress {
+      opacity: .5;
+    }
+  }
+}
+
+.currentEpisode {
+  text-align: center;
+
+  img {
+    border-radius: 1.5rem;
+  }
+
+  strong {
+    display: block;
+    margin-top: 2rem;
+    font: 600 Lexend, sans-serif;
+    line-height: 1.75rem;
+  }
+
+  span {
+    display: block;
+    margin-top: 1rem;
+    opacity: .6;
+    line-height: 1.5rem;
+  }
+}
+
+.emptyPlayer {
+  width: 100%;
+  height: 20rem;
+
+  border: 0.1rem dashed var(--purple-300);
+  border-radius: 1.5rem;
+  
+  background: linear-gradient(144deg, rgba(145, 108 ,258, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  //background: -o-linear-gradient(144deg, rgba(145, 108 ,258, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  //background: -moz-linear-gradient(144deg, rgba(145, 108 ,258, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  //background: -webkit-linear-gradient(144deg, rgba(145, 108 ,258, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+
+  padding: 4rem;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  font-size: 0.875rem;
+
+  span {
+    display: inline-block;
+    width: 4rem;
+    text-align: center;
+  }
+
+  .slider {
+    flex: 1;
+
+    .emptySlider {
+      width: 100%;
+      height: 4px;
+      background: var(--purple-300);
+      border-radius: 2px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  gap: 1.5rem;
+
+  button {
+    background: transparent;
+    border: 0;
+    font-size: 0;
+
+    transition: filter .2s;
+
+    &:hover:not(:disabled) {
+      filter: brightness(.82);
+    }
+
+    &.isActive {
+      filter: invert(.35) sepia(1) saturate(3) hue-rotate(100deg)
+    }
+
+    &.isActive:hover {
+      filter: brightness(.6) invert(.35) sepia(1) saturate(3) hue-rotate(100deg)
+    }
+
+    &.playButton {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      background: var(--purple-400);
+
+      &:hover:not(:disabled) {
+        filter: brightness(.95);
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: .5;
+    }
+
+  }
+}
